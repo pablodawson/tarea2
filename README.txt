@@ -24,6 +24,9 @@ Instrucciones de uso:
 Donde <dir_archivo_txt> es la direccion del archivo de prueba.
 Y <id_algoritmo> es con que algoritmo se crea el archivo "ordenado.txt". Donde 0 es BubbleSort, 1 es CountingSort y 2 es MergeSort.
 
+Por ejemplo:
+./a.out desordenado.txt 0
+
 (4)
 Pablo Dawson A.
 201921034-3

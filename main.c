@@ -66,7 +66,8 @@ void registrarInfo(const char *direccionArchivo, Entrada *entradas, int *numEntr
 }
 
 void imprimirInfo(Entrada entradas[], int numEntradas){
-    for (int i = 0; i < numEntradas; i++) {
+    int i;
+    for (i = 0; i < numEntradas; i++) {
         printf("Index: %d, Rut: %d, Nota: %d, Sigla: %s\n",
                entradas[i].index, entradas[i].rut, entradas[i].nota, entradas[i].sigla);
     }
@@ -80,7 +81,9 @@ void escribirEntradasTxt(const char *direccionOutput, Entrada *entradas, int num
         return;
     }
 
-    for (int i = 0; i < numEntradas; i++) {
+    int i;
+
+    for (i = 0; i < numEntradas; i++) {
         fprintf(file,  "%08d %s %03d\n",
                 entradas[i].rut, entradas[i].sigla, entradas[i].nota);
     }

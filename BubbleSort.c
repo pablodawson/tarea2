@@ -12,10 +12,12 @@ void swap(Entrada *a, Entrada *b)
 void bubblesort(Entrada *a, int size)
 {
     int swapped;
-    for (int i = 0; i < size - 1; i++)
+    int i;
+    for (i = 0; i < size - 1; i++)
     {
         swapped = 0;
-        for (int j = 0; j < size - i - 1; j++)
+        int j;
+        for (j = 0; j < size - i - 1; j++)
         {
             if (a[j].rut > a[j + 1].rut)
             {
