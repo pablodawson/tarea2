@@ -149,21 +149,21 @@ int main(int argc, char *argv[]) {
     registrarInfo(direccionArchivo, entradas, &numEntradas);
     start_time = clock();
     bubblesort(entradas, numEntradas);
-    elapsed_time = (double)(clock() - start_time) / CLOCKS_PER_SEC;
+    elapsed_time = (double)(clock() - start_time);
     fprintf(reporte, "Tiempo de ejecucion Bubble Sort: %f segundos\n", elapsed_time);
 
     // Bench Counting Sort
     registrarInfo(direccionArchivo, entradas, &numEntradas);
     start_time = clock();
     countingsort(entradas, numEntradas);
-    elapsed_time = (double)(clock() - start_time) / CLOCKS_PER_SEC;
+    elapsed_time = (double)(clock() - start_time);
     fprintf(reporte, "Tiempo de ejecucion Counting Sort: %f segundos\n", elapsed_time);
     
     // Bench Merge Sort
     registrarInfo(direccionArchivo, entradas, &numEntradas);
     start_time = clock();
     mergesort(entradas, 0, numEntradas-1);
-    elapsed_time = (double)(clock() - start_time) / CLOCKS_PER_SEC;
+    elapsed_time = (double)(clock() - start_time);
     fprintf(reporte, "Tiempo de ejecucion Merge Sort: %f segundos\n", elapsed_time);
     
     fclose(reporte);
