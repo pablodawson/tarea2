@@ -1,10 +1,12 @@
 #include <stdio.h>
 #define ENTRADAS_MAX 1000
 
-void mergesort(Entrada a[], int i, int j);
+int comparisons = 0;
+
+int mergesort(Entrada a[], int i, int j);
 void merge(Entrada a[], int i1, int j1, int i2, int j2);
 
-void mergesort(Entrada a[], int i, int j)
+int mergesort(Entrada a[], int i, int j)
 {
     int mid;
     
@@ -15,6 +17,8 @@ void mergesort(Entrada a[], int i, int j)
         mergesort(a, mid + 1, j); // right recursion
         merge(a, i, mid, mid + 1, j); // merging of two sorted sub-arrays
     }
+
+    return comparisons;
 }
 
 void merge(Entrada a[], int i1, int j1, int i2, int j2)
@@ -31,15 +35,21 @@ void merge(Entrada a[], int i1, int j1, int i2, int j2)
             temp[k++] = a[i++];
         else
             temp[k++] = a[j++];
+        
+        comparisons+=3;
     }
     
-    while (i <= j1) // copy remaining elements of the first list
+    while (i <= j1){ // copy remaining elements of the first list
         temp[k++] = a[i++];
-        
-    while (j <= j2) // copy remaining elements of the second list
+        comparisons++;
+    }
+    while (j <= j2) { // copy remaining elements of the second list
         temp[k++] = a[j++];
-        
+        comparisons++;
+    }
     // Transfer elements from temp[] back to a[]
-    for (i = i1, j = 0; i <= j2; i++, j++)
+    for (i = i1, j = 0; i <= j2; i++, j++){ 
         a[i] = temp[j];
+        comparisons++;
+    }
 }

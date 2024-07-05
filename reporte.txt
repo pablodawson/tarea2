@@ -1,4 +1,7 @@
 Para procesar: 200 entradas
-Tiempo de ejecucion Bubble Sort: 0.000408 segundos
-Tiempo de ejecucion Counting Sort: 0.088786 segundos
-Tiempo de ejecucion Merge Sort: 0.000019 segundos
+Tiempo de ejecucion Bubble Sort: 0.000443 segundos
+Cantidad de comparaciones Bubble Sort: 39559 
+Tiempo de ejecucion Counting Sort: 0.072127 segundos
+Cantidad de comparaciones Counting Sort: 24983619 
+Tiempo de ejecucion Merge Sort: 0.000021 segundos
+Cantidad de comparaciones Merge Sort: 5666 

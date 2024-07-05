@@ -8,6 +8,7 @@ Se usaron los algoritmos:
 
 Las implementaciones de estos algorimos vienen de https://github.com/diptangsu/Sorting-Algorithms/tree/master.
 Estas se adaptaron para funcionar con el struct propuesto, en lugar de arrays.
+Además, se le agregó un conteo de comparaciones, se cuentan las necesarias para cada loop junto con las de los valores del array.
 
 (2) Condiciones de compilación:
 No se requieren librerías adicionales.

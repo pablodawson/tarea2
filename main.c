@@ -143,28 +143,32 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
+    int comparaciones = 0;
     // Empezar desordenado nuevamente
 
     // Bench Bubble Sort
     registrarInfo(direccionArchivo, entradas, &numEntradas);
     start_time = clock();
-    bubblesort(entradas, numEntradas);
-    elapsed_time = (double)(clock() - start_time);
+    comparaciones = bubblesort(entradas, numEntradas);
+    elapsed_time = (double)(clock() - start_time) / CLOCKS_PER_SEC;
     fprintf(reporte, "Tiempo de ejecucion Bubble Sort: %f segundos\n", elapsed_time);
+    fprintf(reporte, "Cantidad de comparaciones Bubble Sort: %d \n", comparaciones);
 
     // Bench Counting Sort
     registrarInfo(direccionArchivo, entradas, &numEntradas);
     start_time = clock();
-    countingsort(entradas, numEntradas);
-    elapsed_time = (double)(clock() - start_time);
+    comparaciones = countingsort(entradas, numEntradas);
+    elapsed_time = (double)(clock() - start_time) / CLOCKS_PER_SEC;
     fprintf(reporte, "Tiempo de ejecucion Counting Sort: %f segundos\n", elapsed_time);
+    fprintf(reporte, "Cantidad de comparaciones Counting Sort: %d \n", comparaciones);
     
     // Bench Merge Sort
     registrarInfo(direccionArchivo, entradas, &numEntradas);
     start_time = clock();
-    mergesort(entradas, 0, numEntradas-1);
-    elapsed_time = (double)(clock() - start_time);
+    comparaciones = mergesort(entradas, 0, numEntradas-1);
+    elapsed_time = (double)(clock() - start_time) / CLOCKS_PER_SEC;
     fprintf(reporte, "Tiempo de ejecucion Merge Sort: %f segundos\n", elapsed_time);
+    fprintf(reporte, "Cantidad de comparaciones Merge Sort: %d \n", comparaciones);
     
     fclose(reporte);
 
